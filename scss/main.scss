@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;800;900&display=swap);
+$main-color: #5b5b5b;
+$sec-color: #ffd66c;
+$main-font: "Poppins";
+$sec-font: "Raleway";
+/* Mixin */
+@mixin display($flex: flex, $js: center, $ai: center) {
+  display: $flex;
+  justify-content: $js;
+  align-items: $ai;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: $main-font;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: $main-color;
+}
+.slide {
+  transform: translateX(0) !important;
+}
+
+@import "../scss/headerS";
+@import "../scss/mainS";
+
+footer {
+  width: 90%;
+  text-align: right;
+  a.license-freepik {
+    font-weight: 550px;
+    font-size: 12px;
+  }
+}

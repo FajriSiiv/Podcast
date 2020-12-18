@@ -1,0 +1,79 @@
+/* Header */
+.header {
+  width: 90%;
+  height: 50px;
+  background-color: transparent;
+  margin: auto;
+  margin-top: 30px;
+  @include display(flex, space-between);
+  & &-logo {
+    @include display();
+    .logo-brand {
+      width: 30px;
+      height: 30px;
+      background-color: $sec-color;
+      border-radius: 5px;
+      margin-right: 9px;
+    }
+    span {
+      font-weight: 600;
+      color: $main-color;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+  & &-menu {
+    @include display(flex, space-around);
+    width: 50%;
+    a {
+      font-weight: 500;
+      transition: 0.3s ease-in;
+      &:hover {
+        color: $sec-color;
+      }
+    }
+    .sign {
+      padding: 5px 15px;
+      background-color: $sec-color;
+      border-radius: 50px;
+      transition: 0.3s ease-in;
+      &:hover {
+        background-color: $main-color;
+        color: $sec-color;
+      }
+    }
+  }
+  i.fa.fa-bars {
+    font-size: 25px;
+    display: none;
+  }
+  @media screen and (max-width: 992px) {
+    width: 90%;
+    overflow-x: hidden;
+
+    & &-menu {
+      @include display(flex);
+      position: absolute;
+      height: 100vh;
+      flex-direction: column;
+      left: 0;
+      top: 0;
+      background-color: darken($color: white, $amount: 10);
+      transform: translateX(-100%);
+      transition: 0.5s;
+      width: 100%;
+      a {
+        padding: 25px 0;
+        font-size: 18px;
+      }
+    }
+    i.fa.fa-bars {
+      display: block;
+      color: $main-color;
+      z-index: 99;
+      cursor: pointer;
+    }
+  }
+}
+/* End Header */

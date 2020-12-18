@@ -1,0 +1,109 @@
+.main {
+  width: 90%;
+  margin: auto;
+  height: 85vh;
+  .container {
+    @include display(flex, space-between, center);
+    height: 100%;
+    margin-top: -30px;
+
+    &-main {
+      width: 35%;
+      h1 {
+        text-transform: uppercase;
+        font-size: 50px;
+        color: $main-color;
+        font-family: $sec-font;
+        letter-spacing: 1px;
+        font-weight: bolder;
+      }
+      p {
+        line-height: 32px;
+        margin-top: 20px;
+        color: $main-color;
+      }
+      button {
+        outline: none;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: white;
+        background-color: $sec-color;
+        border-radius: 50px;
+        margin-top: 30px;
+        text-transform: uppercase;
+        font-family: $sec-font;
+        cursor: pointer;
+        transition: 0.4s;
+        &:hover {
+          background-color: $main-color;
+          color: $sec-color;
+        }
+      }
+    }
+    &-img {
+      width: 60%;
+      text-align: right;
+      img {
+        width: 600px;
+      }
+    }
+  }
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-position: 590px -480px;
+
+    background-image: url(../bg.png);
+    background-size: 170vmax;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  /* Responsive */
+  @media screen and (max-width: 992px) {
+    .container {
+      &-main {
+        h1 {
+          font-size: 35px;
+        }
+        p {
+          font-size: 14px;
+        }
+        button {
+          font-size: 13px;
+        }
+      }
+      &-img {
+        img {
+          width: 400px;
+        }
+      }
+    }
+    &:before {
+      background-position: 300px -200px;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .container {
+      &-main {
+        width: 100%;
+        h1 {
+          text-align: center;
+        }
+      }
+      &-img {
+        display: none;
+      }
+    }
+    &:before {
+      background-position: center top;
+    }
+  }
+}
